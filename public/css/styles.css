@@ -50,16 +50,17 @@
 }
 
 .nav-bar {
+    margin: 0;
     grid-area: nav-bar;
     width: 100%;
-    align-self: center;
 }
 
 .nav-item-list {
     display: grid;
-    grid-gap: 50px;
     grid-template-columns: repeat(3, auto);
+    grid-gap: 30px;
     align-items:center;
+    margin: 0;
 }
 .nav-item {
     text-align: center;
@@ -71,6 +72,7 @@
     border-radius: 4px;
     transform: rotate(0.33deg);
     padding: 8px;
+    margin:0;
 }
 
 .form {
