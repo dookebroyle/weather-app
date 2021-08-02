@@ -22,8 +22,10 @@ body {
 }
 
 .main-content {
+    margin: 50px;
     grid-area: content;
     text-align: center;
+    padding: 25px;
     
 
 }
@@ -113,8 +115,6 @@ button {
 
 .sun-container {
     grid-area: img;
-    align-self: end;
-    height: auto;
 }
 
 .mountain-container {
@@ -129,10 +129,8 @@ button {
    
 }
 #sun-img {
-    display: flex;
     width: 30%;
-    margin-bottom:-75px;
-    align-self:flex-start;
+    margin-bottom: -100px;
 }
 .weather-text-smaller {
     font-size: 18px;
