@@ -1,6 +1,6 @@
 
 
-.body {
+body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 
@@ -8,7 +8,7 @@
         "content"
         "footer";
     margin: 0;
-    overflow: auto;
+    overflow:auto;
     min-height: 100vh;
 }
 
@@ -30,7 +30,6 @@
 
 .footer {
     grid-area: footer;
-
 }
 
 .title {
@@ -121,6 +120,7 @@ button {
 .mountain-container {
     grid-area: img;
     margin-bottom: 0;
+    align-self: end;
 }
 
 #mountain-img {
