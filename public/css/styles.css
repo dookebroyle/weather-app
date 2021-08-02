@@ -9,6 +9,7 @@
         "footer";
     margin: 0;
     overflow: auto;
+    min-height: 100vh;
 }
 
 .header {
@@ -23,17 +24,13 @@
 .main-content {
     grid-area: content;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    
+
 }
 
 .footer {
     grid-area: footer;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-areas:  
-        "branding"
-        "img";
+
 }
 
 .title {
@@ -115,44 +112,28 @@ button {
 }
 
 
-.branding-container {
-    margin-top: 100px;
-    grid-area: branding;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    grid-template-areas:
-        "author"
-        "git-img";
-    justify-content: right;   
-}
-
 .sun-container {
     grid-area: img;
     align-self: end;
+    height: auto;
 }
 
 .mountain-container {
     grid-area: img;
-    align-self: end;
+    margin-bottom: 0;
 }
 
 #mountain-img {
     width: 100%;
-    height:auto;
+    height:150px;
+   
 }
 #sun-img {
-    grid-area: sun;
-    width: 45%;
-    margin-bottom: 100px;
+    display: flex;
+    width: 30%;
+    margin-bottom:-75px;
+    align-self:flex-start;
 }
-
-#author-footer-txt {
-    grid-area: author; 
-}
-#git-img {
-    grid-area: git-img;
-}
-
 .weather-text-smaller {
     font-size: 18px;
     line-height: 18px;
