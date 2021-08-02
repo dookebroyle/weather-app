@@ -30,7 +30,7 @@
 .footer {
     grid-area: footer;
     display: grid;
-    grid-template-rows: 10px auto;
+    grid-template-rows: auto auto;
     grid-template-areas:  
         "branding"
         "img";
@@ -84,7 +84,7 @@
     border-radius: 4px;
     transform: rotate(0.33deg);
     font-family: Poppins;
-    font-size: auto;
+    font-size: 24px;
     line-height: 40px;
     padding: 5px;
     margin: 8px;
@@ -97,7 +97,7 @@ button {
     border-radius: 4px;
     transform: rotate(0.33deg);
     font-family: Poppins;
-    font-size: auto;
+    font-size: 24px;
     line-height: 40px;
     background: rgba(255, 58, 165, .54);
     margin: 8px;
