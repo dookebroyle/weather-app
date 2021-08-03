@@ -27,6 +27,7 @@ weatherForm.addEventListener('submit', (e) => {
                 weatherDescription.textContent =  `${data.weatherDescription}`
                 wind.textContent = `Wind: ${data.windSpeed} mph ${data.windDir}`
             }
+            
         })
     })
 })
