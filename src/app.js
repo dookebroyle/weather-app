@@ -30,7 +30,7 @@ app.get('', (req, res) =>{
 
 app.get('/about', (req, res) =>{
     res.render('about', {
-        title: 'About Me',
+        title: 'About This Site',
         name: 'Brooke Doyle'
     })
 })
@@ -38,7 +38,6 @@ app.get('/about', (req, res) =>{
 app.get('/contact', (req, res) =>{
     res.render('contact', {
         title: 'Contact',
-        contactTxt: 'Contact me at doyle_brooke@hotmail.com',
         name: 'Brooke Doyle'
     })
 })

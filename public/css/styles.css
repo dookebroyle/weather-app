@@ -41,6 +41,12 @@ body, html {
     text-align: center;
     padding: 25px;
     align-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "develop-img" 
+    "contact-details";
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
 }
 
 .footer {
@@ -119,11 +125,8 @@ button {
 .cloud-container {
     display: grid;
     font-family: Poppins;
-    font-size: 32px;
-    line-height: 48px;
     align-items: center;
     text-align: center;
-    font-weight: bold;
 }
 
 
@@ -140,6 +143,10 @@ button {
     align-self: end;
 }
 
+.weather-text-line {
+    margin: 0;
+}
+
 #mountain-img {
     width: 100%;
     height: 150px;
@@ -147,28 +154,53 @@ button {
 
 #sun-img {
     width: 30%;
-    margin-bottom: 50px;
-    
+    margin-bottom: 50px;  
+}
+#git-img {
+    width: 75px;
+}
+.city-text-larger {
+    font-size: 28px;
+    font-weight: bold;
 }
 
-#weather-text-smaller {
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 100;
-    
+.weather-text-line {
+    font-size: 26px;
+    margin: 0;
+    font-weight: lighter;
 }
+ 
+#about-para{
+    font-size: 26px;
+    margin: 30px;
+    font-weight: lighter;
+}
+.contact-text{
+    grid-area: contact-details;
+    font-size: 26px;
+    font-weight: lighter;
+}
+
+#develop-img {
+    grid-area: develop-img;
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 
 @media only screen and (max-width: 600px){
-    body {
-      background-color: rgb(226, 230, 173);
-    }
+ 
     #sun-img {
         margin-bottom: 75px;
         width: 40%;
     }
     .title {
-        font-size: 48px;
+        font-size: 54px;
     }
     .main-content{
         margin: 0;
@@ -187,12 +219,12 @@ button {
         padding: 0px;
     }
     .cloud-container {
-        font-size: 18px;
-        line-height: 14px;
+        font-size: 24px;
+        line-height: 24px;
     }
     .weather-text-smaller {
-        font-size: 14px;
-        line-height: 14px;
+        font-size: 18px;
+        line-height: 18px;
     }
 }
 
@@ -205,6 +237,30 @@ button {
     #sun-img {
         margin-bottom: 90px;
         width: 45%;
+    }
+    .title {
+        font-size: 48px;
+    }
+    .nav-item {
+        font-size: 14px;
+        margin: 0;
+        padding: 0px;
+    }
+    .text-input{
+        font-size: 14px;
+        padding: 0px;
+    }
+    button{
+        font-size: 14px;
+        padding: 0px;
+    }
+    .cloud-container {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .weather-text-smaller {
+        font-size: 12px;
+        line-height: 12px;
     }
  
   }
