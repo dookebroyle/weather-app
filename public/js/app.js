@@ -3,7 +3,6 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const currentTemp = document.querySelector('#current-temp')
 const weatherDescription = document.querySelector('#weather-description')
-const precip = document.querySelector('#precip')
 const wind = document.querySelector('#wind')
 
 
@@ -15,7 +14,6 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     currentTemp.textContent = ''
     weatherDescription.textContent = ''
-    precip.textContent = ''
     wind.textContent = ''
 
     
@@ -28,7 +26,6 @@ weatherForm.addEventListener('submit', (e) => {
                 currentTemp.textContent = `${data.currentTemp} \u00B0`
                 weatherDescription.textContent =  `${data.weatherDescription}`
                 wind.textContent = `Wind: ${data.windSpeed} mph ${data.windDir}`
-                precip.textContent = `Precipitation: ${data.precip}`
             }
         })
     })

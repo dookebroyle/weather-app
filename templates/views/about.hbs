@@ -6,17 +6,16 @@
         <link rel="stylesheet" href="./css/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    
-        <div class="main-content">
+        <div class="container">
             {{>header}}
-            
-            <p id="aboutme-name-title">Brooke Doyle</p>
-
-            <img class="portrait" src="/img/me.png">
-
-            <p id="about-para">This site was created by Brooke Doyle.
-                 It uses Node, Express, Heroku, and API's from mapbox.com and weatherstack.com. </p>
+            <div class="main-content">
+                <p id="about-para">This site was created by Brooke Doyle.
+                    It uses Node, Express, Heroku, and API's from mapbox.com and weatherstack.com. I used Figma to design the footer</p>
+                <a href="" alt="website-link">View my site</a>
+                <img href="https://github.com/dookebroyle" id="git-img" src="./img/github-logo.png" alt="github link">
+                
+            </div>
+            {{>footer}} 
         </div>
-        {{>footer}} 
     </body>
 </html>
