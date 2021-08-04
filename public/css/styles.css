@@ -150,7 +150,8 @@ button {
 
 #sun-img {
     width: 30%;
-    margin-bottom: 50px;  
+    margin-bottom: 50px; 
+    height: auto; 
 }
 #git-img {
     width: 75px;
