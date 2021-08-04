@@ -129,6 +129,7 @@ button {
 .sun-container {
     display: grid;
     grid-area: img;
+    margin-bottom: 50px; 
     align-self: end;
     
 }
