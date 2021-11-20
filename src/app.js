@@ -3,7 +3,10 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const e = require('express');
+const reverse = require('reverse-geocode')
+
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -43,16 +46,37 @@ app.get('/contact', (req, res) =>{
 })
 
 app.get('/weather', (req, res) =>{
-    if(!req.query.address){
+    if(!req.query){
         return res.send( {
             error: 'No location entered. Please provide a city name.'
         })
     }
-    geocode(req.query.address, (error, {lat,lng,loc} = {}) => {
-        if (error){
-            return res.send({ error });
-        }
-        forecast(lat, lng, (error, forecastData) => {
+    if(req.query.address){
+        geocode(req.query.address, (error, {lat,lng,loc} = {}) => {
+            if (error){
+                return res.send({ error });
+            }
+            forecast(lat, lng, (error, forecastData) => {
+                if (error){
+                    return res.send({error});
+                }
+                res.send({
+                    currentTemp: forecastData.currentTemp,
+                    windSpeed: forecastData.windSpeed,
+                    weatherDescription: forecastData.weatherDescription,
+                    windDir: forecastData.windDir,
+                    location: loc,
+                    address: req.query.address
+                });
+            })
+        })  
+    }
+    if(req.query.location){
+        
+        const loc = req.query.location.split(',');
+        forecast(loc[0], loc[1], (error, forecastData) => {
+            const address = reverse.lookup(loc[0], loc[1], 'us')
+            const cityState = `${address.city}, ${address.state}`
             if (error){
                 return res.send({error});
             }
@@ -61,12 +85,14 @@ app.get('/weather', (req, res) =>{
                 windSpeed: forecastData.windSpeed,
                 weatherDescription: forecastData.weatherDescription,
                 windDir: forecastData.windDir,
-                location: loc,
+                location: cityState,
                 address: req.query.address
             });
-          })
-    })   
+        })
+    }
+    
 })
+
 
 app.get ('/help/*', (req, res) =>{
     res.render('404', {

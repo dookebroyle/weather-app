@@ -9,15 +9,13 @@
     <body>
         <div class="container">
         {{>header}}
-
         <section class="main-content">
-
             <form>
-
                 <input type="text" class="text-input" id="city-text-input" placeholder="Location">
-                    <button type="submit">Search</button>
+                <button id="your-location-button" type="button">Your location</button>
+                <button type="submit">Search</button>
             </form>
-
+          
             <div class="cloud-container">
                 <p class="city-text-larger" id="message-1"></p>
                 <div class="weather-text-smaller">
@@ -26,9 +24,7 @@
                     <p class="weather-text-line" id="wind"></p>
                 </div> 
             </div>
-
         </section>
-
         {{>footer}}
 
         </div>
